@@ -12,6 +12,8 @@ if [ -f "$(which powerline-daemon)" ]; then
     . /usr/share/powerline/bash/powerline.sh
 fi
 
+source $HOME/.aliases
+source $HOME/.functions
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
