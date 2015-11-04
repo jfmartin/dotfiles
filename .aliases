@@ -1,0 +1,54 @@
+# -*- mode: shell-script -*-
+
+# dates
+alias today='date +"%F"'
+alias now='date +"%T"'
+alias nowdate='date +"%F-%T"'
+alias week='date +%V'
+
+# ls
+alias l='ls -alh'
+alias ls='ls --color=auto'
+alias la='ls -aF'
+alias ll='ls -l'
+
+# grep
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+# process
+alias psa='ps aux'
+alias psc='ps xawf -eo pid,user,cgroup,args'
+alias psg='ps aux | grep '
+alias ka9='killall -9'
+alias k9='kill -9'
+
+# cd
+alias ..='cd ..'
+alias ...='cd ../..'
+alias cdb='cd -'
+
+# utils
+alias mount-prty='mount | column -t'
+alias diff='colordiff'
+alias quickserv='python3 -m "http.server"'
+alias clean_tmp_file='find . -iname "*~" -type f -delete'
+alias ccat='pygmentize'
+alias wmiror='wget -mk'
+alias ports='netstat -tulanp'
+alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias open="xdg-open"
+alias dirsusage='du -h --max-depth=1'
+alias nocow='chattr +C' # Disable cow for Btrfs
+
+# rsync
+alias rsync-copy="rsync -av --progress -h"
+alias rsync-move="rsync -av --progress -h --remove-source-files"
+alias rsync-update="rsync -avu --progress -h"
+alias rsync-synchronize='rsync -avu --delete --progress -h'
+alias cpv="rsync -poghb --backup-dir=/tmp/rsync -e /dev/null --progress --"
+
+# emacs
+alias em='emacsclient -nc -a ""'
+alias emc='emacsclient -t -a ""'

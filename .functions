@@ -1,0 +1,26 @@
+# -*- mode: shell-script -*-
+
+function bak_today() {
+  for f in $*; do
+    cp --preserve=all $f "${f}.$(today).bak"
+  done
+}
+
+function bak_now() {
+  for f in $*; do
+    cp --preserve=all $f "${f}.$(now).bak"
+  done
+}
+
+function mkcd() {
+  mkdir -p $1 && cd $1
+}
+alias cdmk='mkcd'
+
+function cp_p () {
+  rsync -WavP --human-readable --progress $1 $2
+}
+
+function dired() {
+    emacsclient -e "(dired \"$PWD\")"
+}

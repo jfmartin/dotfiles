@@ -1,0 +1,66 @@
+[user]
+  email = jf.je.martin@gmail.com
+  name = Jean-François Martin
+
+[alias]
+  #log
+  l = log --graph --date=short
+  ql = log --online --decorate
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  changes = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status
+  short = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\"
+  changelog = log --pretty=format:\" * %s\"
+  shortnocolor = log --pretty=format:\"%h %cr %cn %s\"
+
+  s = status -s
+  st = status
+  ci = commit
+  co = checkout
+
+  #branch
+  b = branch -v
+  br = branch
+  branches = branch -a
+  nb = checkout -b
+
+  #reset
+  undo = reset --hard
+  unstage = reset HEAD
+  uncommit = reset --soft HEAD^
+
+  serve = daemon --reuseaddr --verbose  --base-path=. --export-all ./.git
+
+  a = add
+
+  #diff
+  d = diff
+  dc = diff --cached
+  last = diff HEAD^
+  df = diff --color --color-words --abbrev
+
+  # Clone a repository including all submodules
+  cr = clone --recursive
+
+[color]
+  ui = auto
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+
+[sendemail]
+  chainreplyto = false
+
+[push]
+  default = simple
+
+[core]
+  editor = emacsclient -t -a \"\"
+
+[merge]
+  tool = emerge
+
+# Server perso
+[url "ssh://jfmartin@unoserv:/home/jfmartin/git"]
+  insteadOf = ssh://unoserv
