@@ -32,6 +32,9 @@ fi
 source $HOME/.aliases
 source $HOME/.functions
 
+# Env
+export EDITOR='emacsclient -t'
+
 # Global aliases
 alias -g L='| less'
 alias -g G='| grep'

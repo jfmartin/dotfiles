@@ -50,5 +50,5 @@ alias rsync-synchronize='rsync -avu --delete --progress -h'
 alias cpv="rsync -poghb --backup-dir=/tmp/rsync -e /dev/null --progress --"
 
 # emacs
-alias em='emacsclient -nc -a ""'
-alias emc='emacsclient -t -a ""'
+alias emc='emacsclient -nc'
+alias emt='emacsclient -t'
