@@ -1,0 +1,23 @@
+directory: ~/Music/
+library: ~/.local/share/beetslib.blb
+
+plugins: chroma lastgenre fetchart
+
+import:
+  move: yes
+  copy: no
+
+chroma:
+  auto: yes
+
+acoustid:
+  apikey: 1nLvMo4FON
+
+lastgenre:
+  auto: yes
+
+paths:
+  default: $genre/$albumartist/$original_year - $album%aunique{}/$track $title
+  singleton: Non-Album/$artist/$title
+  comp: Compilations/$original_year - $album%aunique{}/$track $title
+  albumtype:soundtrack: Soundtracks/$album/$track $title
