@@ -23,7 +23,8 @@ no_powerline_prompt() {
 }
 
 
-if [ -f "$(which powerline-daemon)" ]; then
+powerline_enabled=0
+if test $powerline_enabled -eq 0 && [ -f "$(which powerline-daemon)" ]; then
     . /usr/share/powerline/zsh/powerline.zsh
 else
     no_powerline_prompt

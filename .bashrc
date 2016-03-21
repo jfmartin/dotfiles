@@ -5,7 +5,8 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-if [ -f "$(which powerline-daemon)" -a "$TERM" != "dumb" ]; then
+powerline_enabled=0
+if test $powerline_enabled -eq 0 && [ "$TERM" != "dumb" ] &&  [ -f "$(which powerline-daemon)" ]; then
     powerline-daemon -q
     POWERLINE_BASH_CONTINUATION=1
     POWERLINE_BASH_SELECT=1
