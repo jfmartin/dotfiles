@@ -5,12 +5,22 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+# Prompt
+GREEN="\[$(tput setaf 2)\]"
+CYAN="\[$(tput setaf 6)\]"
+BOLD="\[$(tput bold)\]"
+LGREEN="\[$(tput setaf 10)\]"
+YELLOW="\[$(tput setaf 11)\]"
+RESET="\[$(tput sgr0)\]"
+
 powerline_enabled=0
 if test $powerline_enabled -eq 0 && [ "$TERM" != "dumb" ] &&  [ -f "$(which powerline-daemon)" ]; then
     powerline-daemon -q
     POWERLINE_BASH_CONTINUATION=1
     POWERLINE_BASH_SELECT=1
     . /usr/share/powerline/bash/powerline.sh
+else
+    export PS1="${CYAN}\u${RESET} ${BOLD}@${RESET} ${YELLOW}\h${RESET} in ${GREEN}\W${RESET} \n[\$?]${BOLD}\$${RESET} "
 fi
 
 source $HOME/.aliases
