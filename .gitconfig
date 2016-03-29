@@ -53,7 +53,7 @@
   chainreplyto = false
 
 [push]
-  default = simple
+  default = default
 
 [core]
   editor = emacsclient -t
